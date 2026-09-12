@@ -1,9 +1,35 @@
-def validar_hp(hp):
-    if hp <0:
-        raise ValueError("hp nao pode ser negativo")
-    print("hp valido")
+class Personagem:
+    def __init__(self, nome, vida, vida_maxima, ataque, defesa):
+        validações= {
+            "nome": str, 
+            "vida_maxima" : int,
+            "vida": int,
+            "ataque" : int,
+            "defesa": int
+        }
 
-validar_hp(10)   
-validar_hp(0)     
-validar_hp(-5)  
+        for itens in validações:
+            valor_real = locals()[itens]
+            tipo_esperado = validações[itens]
+            
+            if not isinstance(valor_real, tipo_esperado):
+                raise TypeError("Error: TypeError")
+            return
 
+        self.nome = nome
+        self.vida = vida
+        self.vida_maxima = vida_maxima
+        self.ataque = ataque
+        self.defesa = defesa
+
+
+    def atacar(self,alvo):
+
+
+
+    def receber_dano(dano):
+
+    def esta_vivo():
+
+        
+#Métodos: atacar(alvo), receber_dano(dano), esta_vivo(), __str__()
